@@ -30,6 +30,14 @@ void putstr_fd(char *str, int fd)
     }
 }
 
+void my_mlx_pixel_put(t_img *data, int x, int y, int color)
+{
+    char *dst;
+
+    dst = data->img_addr + (y * data->line_len + x * (data->bits_per_pix / 8));
+    *(unsigned int *)dst = color;
+}
+/*
 int main()
 {
     char *str1 = "abcde";
@@ -39,4 +47,4 @@ int main()
     putstr_fd(str1, 1);
 
     // printf("%d\n", result);
-}
+}*/

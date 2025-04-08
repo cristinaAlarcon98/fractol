@@ -7,9 +7,15 @@ int main(int nargs, char **args)
     {
         void *mlx;
         void *mlx_win;
+        t_img img;
 
         mlx = mlx_init();
         mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
+        img.img_ptr = mlx_new_image(mlx, 1920, 1080);
+        img.img_addr = mlx_get_data_addr(img.img_ptr, &img.bits_per_pix, &img.line_len,
+                                         &img.endian);
+        my_mlx_pixel_put(&img, 5, 5, 0x00FF0000);
+        mlx_put_image_to_window(mlx, mlx_win, img.img_ptr, 0, 0);
         mlx_loop(mlx);
         // fractal_init(&fractal);
         // fractal_render(&fractal);
