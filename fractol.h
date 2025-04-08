@@ -27,5 +27,6 @@ typedef struct s_fractal
 
 int ft_strcmp(char *str1, char *str2, int n);
 void putstr_fd(char *str, int fd);
+void mlx_pixel_put(t_img *data, int x, int y, int color);
 
 #endif
