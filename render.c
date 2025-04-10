@@ -43,7 +43,7 @@ void fractal_render(t_fractal *fractal)
     {
         while (x < WIDTH)
         {
-            my_mlx_pixel_put(&fractal->img, x, y, fractal);
+            handle_pixel(x, y, fractal);
             x++;
         }
         y++;
