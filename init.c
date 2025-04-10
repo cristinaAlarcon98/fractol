@@ -1,5 +1,5 @@
 #include "fractol.h"
-void malloc_error(void)
+static void malloc_error(void)
 {
     perror("Error: malloc failed\n");
     exit(EXIT_FAILURE);
