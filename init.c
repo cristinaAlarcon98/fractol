@@ -8,7 +8,7 @@ static void malloc_error(void)
 void data_init(t_fractal *fractal)
 {
     fractal->scape_value = 4;
-    fractal->ilterations = 200;
+    fractal->ilterations = 42;
 }
 void fractal_init(t_fractal *fractal)
 {

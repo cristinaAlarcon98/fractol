@@ -13,7 +13,7 @@ int main(int nargs, char **args)
     }
     else
     {
-        // putstr_fd(ERROR_MESSAGE, 1);
+        putstr_fd(ERROR_MESSAGE, STDERR_FILENO);
         exit(EXIT_FAILURE);
     }
 }
