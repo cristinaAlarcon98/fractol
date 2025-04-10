@@ -32,7 +32,7 @@ static void handle_pixel(int x, int y, t_fractal *fractal)
         }
         i++;
     }
-    my_pixel_put(x, y, &fractal->img, WHITE);
+    my_pixel_put(x, y, &fractal->img, NEON_PINK);
 }
 
 void fractal_render(t_fractal *fractal)
