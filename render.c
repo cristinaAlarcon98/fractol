@@ -27,10 +27,12 @@ static void handle_pixel(int x, int y, t_fractal *fractal)
         if ((z.x * z.x) + (z.y * z.y) > fractal->scape_value)
         {
             color = scale(i, BLACK, WHITE, 0, fractal->ilterations);
-            my_pixel_put(x, y, &fractal->img, GLOW_ORANGE);
+            my_pixel_put(x, y, &fractal->img, color);
             return;
         }
+        i++;
     }
+    my_pixel_put(x, y, &fractal->img, BLACK);
 }
 
 void fractal_render(t_fractal *fractal)
@@ -41,6 +43,7 @@ void fractal_render(t_fractal *fractal)
     y = 0;
     while (y < HEIGHT)
     {
+        x = 0;
         while (x < WIDTH)
         {
             handle_pixel(x, y, fractal);
