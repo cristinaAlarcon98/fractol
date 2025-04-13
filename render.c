@@ -26,7 +26,7 @@ static void handle_pixel(int x, int y, t_fractal *fractal)
         z = sum_complex(square_complex(z), c);
         if ((z.x * z.x) + (z.y * z.y) > fractal->scape_value)
         {
-            color = scale(i, BLACK, WHITE, 0, fractal->ilterations);
+            color = scale(i, LASER_BLUE, FUNKY_YELLOW, 0, fractal->ilterations);
             my_pixel_put(x, y, &fractal->img, color);
             return;
         }
