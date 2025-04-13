@@ -8,15 +8,15 @@
 #include "minilibx-linux/mlx.h"
 
 #define ERROR_MESSAGE "Please enter \n\t\"./fractol mandelbrot\" or \n\t\"./fractol julia <value_1> <value_2>\n"
-#define WIDTH 600
-#define HEIGHT 600
+#define WIDTH 700
+#define HEIGHT 700
 
 // Basic colors
 #define BLACK 0x000000
 #define WHITE 0xFFFFFF
 #define RED 0xFF0000
 #define GREEN 0x00FF00
-#define BLUE 0x0000FF
+#define BLUE 0x020765
 
 // Psychedelic colors
 #define NEON_PINK 0xFF1493
