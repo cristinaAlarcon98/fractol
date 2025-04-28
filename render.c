@@ -26,13 +26,13 @@ static void handle_pixel(int x, int y, t_fractal *fractal)
         z = sum_complex(square_complex(z), c);
         if ((z.x * z.x) + (z.y * z.y) > fractal->scape_value)
         {
-            color = scale(i, FUNKY_YELLOW, NEON_PINK, 0, fractal->ilterations); // Fractal shape color
+            color = scale(i, HYPER_TEAL, ULTRA_VIOLET, 0, fractal->ilterations); // Fractal shape color
             my_pixel_put(x, y, &fractal->img, color);
             return;
         }
         i++;
     }
-    my_pixel_put(x, y, &fractal->img, BLACK); // Inside the fractal
+    my_pixel_put(x, y, &fractal->img, BLACK);
 }
 
 void fractal_render(t_fractal *fractal)
@@ -47,7 +47,7 @@ void fractal_render(t_fractal *fractal)
         while (x < WIDTH)
         {
             if (x == 0 || y == 0 || x == WIDTH - 1 || y == HEIGHT - 1) // Set background color
-                my_pixel_put(x, y, &fractal->img, 0x020765);
+                my_pixel_put(x, y, &fractal->img, 0x004D4D);
             else
                 handle_pixel(x, y, fractal);
             x++;
