@@ -23,10 +23,10 @@ static void handle_pixel(int x, int y, t_fractal *fractal)
 
     while (i < fractal->ilterations)
     {
-        z = sum_complex(square_complex(z), c);
+        z = sum_complex(square_complex(z), c); // z = z^2 + c
         if ((z.x * z.x) + (z.y * z.y) > fractal->scape_value)
         {
-            color = scale(i, GLOW_ORANGE, PSY_RED, 0, fractal->ilterations); // Fractal shape color
+            color = scale(i, BLACK, WHITE, 0, fractal->ilterations); // Fractal shape color
             my_pixel_put(x, y, &fractal->img, color);
             return;
         }
