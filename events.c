@@ -29,3 +29,14 @@ int key_handler(int keysym, t_fractal *fractal)
     fractal_render(fractal);
     return (0);
 }
+
+int mouse_handler(int button, int x, int y, t_fractal *fractal)
+{
+    /*if (button ==)
+    {
+    }
+    else if (button ==)*/
+
+    printf("%d\n", button);
+    return (0);
+}
