@@ -9,9 +9,6 @@ int close_handler(t_fractal *fractal)
     exit(EXIT_SUCCESS);
 }
 
-voir mouse_handler()
-{
-}
 int key_handler(int keysym, t_fractal *fractal)
 {
     if (keysym == XK_Escape)
