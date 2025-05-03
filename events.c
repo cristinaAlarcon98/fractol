@@ -22,9 +22,9 @@ int key_handler(int keysym, t_fractal *fractal)
     else if (keysym == XK_Down)
         fractal->shift_y += 0.5;
     else if (keysym == XK_plus)
-        fractal->iterations += 10;
+        fractal->ilterations += 10;
     else if (keysym == XK_minus)
-        fractal->iterations -= 10;
+        fractal->ilterations -= 10;
 
     fractal_render(fractal);
     return (0);
