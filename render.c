@@ -17,7 +17,7 @@ static void handle_pixel(int x, int y, t_fractal *fractal)
 
     z.x = 0.0;
     z.y = 0.0;
-    c.x = scale(x, -2, +2, 0, WIDTH + fractal->shift_x);
+    c.x = scale(x, -2, +2, 0, WIDTH) + fractal->shift_x;
     c.y = scale(y, -2, +2, 0, HEIGHT) + fractal->shift_y;
     i = 0;
 
