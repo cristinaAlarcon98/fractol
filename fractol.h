@@ -6,6 +6,8 @@
 #include <unistd.h>
 #include <math.h>
 #include "minilibx-linux/mlx.h"
+#include <X11/X.h>
+#include <X11/keysym.h>
 
 #define ERROR_MESSAGE "Please enter \n\t\"./fractol mandelbrot\" or \n\t\"./fractol julia <value_1> <value_2>\n"
 #define WIDTH 700
@@ -47,6 +49,9 @@ typedef struct s_fractal
     t_img img;
     double scape_value;
     int ilterations;
+    double shift_x;
+    double shift_y;
+
 } t_fractal;
 
 typedef struct s_complex
@@ -63,5 +68,7 @@ double scale(double unscaled_num, double new_min, double new_max, double old_min
 double scale(double unscaled_num, double new_min, double new_max, double old_min, double old_max);
 t_complex square_complex(t_complex z);
 t_complex sum_complex(t_complex z1, t_complex z2);
+int key_handler(int keysym, t_fractal *fractal);
+int close_handler(t_fractal *fractal)
 
 #endif

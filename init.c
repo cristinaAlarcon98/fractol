@@ -9,8 +9,16 @@ void data_init(t_fractal *fractal)
 {
     fractal->scape_value = 4;
     fractal->ilterations = 400;
+    fractal->shift_x = 0;
+    fractal->shift_y = 0;
 }
 
+static void events_init(t_fractal *fractal)
+{
+    mlx_hook(fractal->mlx_window, KeyPress, KeyPressmask, key_handler, fractal);
+    mlx_hook(fractal->mlx_window, ButtonPress, ButtonPressMask, mouse_handler, fractal);
+    mlx_hook(fractal->mlx_window, DestroyNotify, StructureNotifyMask, close_handler, fractal) * /
+}
 void fractal_init(t_fractal *fractal)
 {
     fractal->mlx_connection = mlx_init();
@@ -37,5 +45,6 @@ void fractal_init(t_fractal *fractal)
     fractal->img.pixel_ptr = mlx_get_data_addr(fractal->img.img_ptr, &fractal->img.bits_per_pix,
                                                &fractal->img.line_len, &fractal->img.endian);
 
+    events_init(fractal);
     data_init(fractal);
 }
