@@ -51,7 +51,9 @@ typedef struct s_fractal
     int ilterations;
     double shift_x;
     double shift_y;
-
+    double zoom;
+    double julia_x;
+    double julia_y;
 } t_fractal;
 
 typedef struct s_complex
@@ -71,5 +73,6 @@ t_complex sum_complex(t_complex z1, t_complex z2);
 int key_handler(int keysym, t_fractal *fractal);
 int close_handler(t_fractal *fractal);
 int mouse_handler(int button, int x, int y, t_fractal *fractal);
+double alphtodoubl(char *s)
 
 #endif

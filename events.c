@@ -14,13 +14,13 @@ int key_handler(int keysym, t_fractal *fractal)
     if (keysym == XK_Escape)
         close_handler(fractal);
     else if (keysym == XK_Left)
-        fractal->shift_x += 0.5;
+        fractal->shift_x += (0.5 * fractal->zoom);
     else if (keysym == XK_Right)
-        fractal->shift_x -= 0.5;
+        fractal->shift_x -= (0.5 * fractal->zoom);
     else if (keysym == XK_Up)
-        fractal->shift_y -= 0.5;
+        fractal->shift_y -= (0.5 * fractal->zoom);
     else if (keysym == XK_Down)
-        fractal->shift_y += 0.5;
+        fractal->shift_y += (0.5 * fractal->zoom);
     else if (keysym == XK_plus)
         fractal->ilterations += 10;
     else if (keysym == XK_minus)
@@ -32,11 +32,14 @@ int key_handler(int keysym, t_fractal *fractal)
 
 int mouse_handler(int button, int x, int y, t_fractal *fractal)
 {
-    /*if (button ==)
+    if (button == 4)
     {
+        fractal->zoom *= 0.9;
     }
-    else if (button ==)*/
+    else if (button == 5)
+    {
+        fractal->zoom *= 1.1;
+    }
 
-    printf("%d\n", button);
     return (0);
 }

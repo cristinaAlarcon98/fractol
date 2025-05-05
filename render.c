@@ -17,16 +17,27 @@ static void handle_pixel(int x, int y, t_fractal *fractal)
 
     z.x = 0.0;
     z.y = 0.0;
-    c.x = scale(x, -2, +2, 0, WIDTH) + fractal->shift_x;
-    c.y = scale(y, -2, +2, 0, HEIGHT) + fractal->shift_y;
-    i = 0;
 
+    if (!ft_strcmp(fractal->name, "mandelbrot", 10))
+    {
+        c.x = (scale(x, -2, +2, 0, WIDTH) * fractal->zoom) + fractal->shift_x;
+        c.y = (scale(y, -2, +2, 0, HEIGHT) * fractal->zoom) + fractal->shift_y;
+    }
+    else // julia set
+    {
+        c.x = fractal->julia_x;
+        c.y = fractal->julia_y;
+        z.x = (scale(x, -2, +2, 0, WIDTH) * fractal->zoom) + fractal->shift_x;
+        z.y = (scale(y, -2, +2, 0, HEIGHT) * fractal->zoom) + fractal->shift_y;
+    }
+
+    i = 0;
     while (i < fractal->ilterations)
     {
-        z = sum_complex(square_complex(z), c); // z = z^2 + c
+        z = sum_complex(square_complex(z), c);
         if ((z.x * z.x) + (z.y * z.y) > fractal->scape_value)
         {
-            color = scale(i, BLACK, WHITE, 0, fractal->ilterations); // Fractal shape color
+            color = scale(i, BLACK, WHITE, 0, fractal->ilterations);
             my_pixel_put(x, y, &fractal->img, color);
             return;
         }

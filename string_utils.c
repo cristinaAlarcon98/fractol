@@ -37,6 +37,46 @@ void my_mlx_pixel_put(t_img *data, int x, int y, int color)
     dst = data->img_ptr + (y * data->line_len + x * (data->bits_per_pix / 8));
     *(unsigned int *)dst = color;
 }
+
+double alphtodoubl(char *s)
+{
+    long integer_part;
+    double fractional_part;
+    double pow;
+    int sign;
+
+    sign = 1;
+    integer_part = 0;
+    fractional_part = 0.0;
+    pow = 1.0;
+
+    if (*s == '-' || *s == '+')
+    {
+        if (*s == '-')
+            sign = -1;
+        s++;
+    }
+
+    while (*s >= '0' && *s <= '9')
+    {
+        integer_part = integer_part * 10 + (*s - '0');
+        s++;
+    }
+
+    if (*s == '.')
+    {
+        s++;
+        while (*s >= '0' && *s <= '9')
+        {
+            pow *= 0.1;
+            fractional_part += (*s - '0') * pow;
+            s++;
+        }
+    }
+
+    return (sign * (integer_part + fractional_part));
+}
+
 /*
 int main()
 {
