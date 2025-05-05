@@ -15,19 +15,23 @@ static void handle_pixel(int x, int y, t_fractal *fractal)
     int i;
     int color;
 
-        if (!ft_strcmp(fractal->name, "mandelbrot", 10))
+    if (ft_strcmp(fractal->name, "mandelbrot", 10))
     {
         z.x = 0.0;
         z.y = 0.0;
         c.x = (scale(x, -2, +2, 0, WIDTH) * fractal->zoom) + fractal->shift_x;
         c.y = (scale(y, -2, +2, 0, HEIGHT) * fractal->zoom) + fractal->shift_y;
     }
-    else // julia set
+    else if (ft_strcmp(fractal->name, "julia", 5)) // julia set
     {
         c.x = fractal->julia_x;
         c.y = fractal->julia_y;
         z.x = (scale(x, -2, +2, 0, WIDTH) * fractal->zoom) + fractal->shift_x;
         z.y = (scale(y, -2, +2, 0, HEIGHT) * fractal->zoom) + fractal->shift_y;
+    }
+    else
+    {
+        return;
     }
 
     i = 0;
