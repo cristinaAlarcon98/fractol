@@ -11,7 +11,7 @@ void data_init(t_fractal *fractal)
     fractal->ilterations = 100;
     fractal->shift_x = 0;
     fractal->shift_y = 0;
-    fractal->zoom = 0.5;
+    fractal->zoom = 1.0;
 }
 
 static void events_init(t_fractal *fractal)
