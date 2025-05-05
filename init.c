@@ -8,10 +8,10 @@ static void handle_error(void)
 void data_init(t_fractal *fractal)
 {
     fractal->scape_value = 4;
-    fractal->ilterations = 400;
+    fractal->ilterations = 100;
     fractal->shift_x = 0;
     fractal->shift_y = 0;
-    fractal->zoom = 1.0;
+    fractal->zoom = 0.5;
 }
 
 static void events_init(t_fractal *fractal)
