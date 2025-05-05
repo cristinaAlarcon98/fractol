@@ -10,12 +10,12 @@ int ft_strcmp(char *str1, char *str2, int n)
     while (str1[i] && str2[i] && i < n)
     {
         if (str1[i] != str2[i])
-            return (1);
+            return (0);
         i++;
     }
     if (i < n)
-        return (1);
-    return (0);
+        return (0);
+    return (1);
 }
 
 void putstr_fd(char *str, int fd)
