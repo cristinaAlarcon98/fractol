@@ -69,7 +69,3 @@ Through this project, I learned to:
 - Manage real-time events and user input in C.  
 - Optimize computations for performance in recursive mathematical systems.
 
-## Author
-
-Developed by **Cristina Alarcón**  
-[cristinaalarcon.com](https://cristinaalarcon.com)
